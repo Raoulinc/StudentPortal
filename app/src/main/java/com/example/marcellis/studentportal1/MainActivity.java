@@ -1,5 +1,6 @@
 package com.example.marcellis.studentportal1;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -65,16 +66,38 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, AddPortal.class);
-
                 startActivityForResult(intent, 1234);
+
             }
         });
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            //Checks if the requestCode is correct
+            if (requestCode == 1234) {
+                //Gets the values
+                String url = data.getStringExtra("url");
+                String title = data.getStringExtra("title");
+
+                //Add the values to the list
+                items.add(new ListItem(title,url));
+
+                //Refresh the listView
+                adapter.notifyDataSetChanged();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
