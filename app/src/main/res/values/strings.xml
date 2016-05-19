@@ -6,4 +6,6 @@
     <string name="new_title_label">Title</string>
     <string name="new_item_icon_label">Icon</string>
     <string name="new_item_add_button">Add portal</string>
+    <string name="single_list_item_url">URL</string>
+    <string name="single_list_item_title">Title</string>
 </resources>

@@ -4,7 +4,6 @@ package com.example.marcellis.studentportal1;
  * Created by Marcellis on 10-12-2015.
  */
 public class ListItem {
-    private long id;
     private String url;
     private String title;
 
@@ -17,7 +16,12 @@ public class ListItem {
         return url;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     @Override
     public String toString() {
         return title;
-    }}
+    }
+}
