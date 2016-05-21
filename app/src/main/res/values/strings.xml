@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StudentPortal1</string>
+    <string name="app_name">StudentPortal</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_add_portal">AddPortal</string>
     <string name="new_item_title_label">Url</string>
